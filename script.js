@@ -11,7 +11,7 @@ const imagens = [
   { src: "img/conjunto3.png", legenda: "Reguladores e secadores APU" },
   { src: "img/conjunto7.png", legenda: "Válvulas protetoras de 4 circuitos e de 6 vias" },
   { src: "img/conjunto8.png", legenda: "Válvula do freio de serviço, manete e moduladora do ABS" },
-  { src: "img/conjunto4.png", legenda: "Compressores monocilindro" },
+  { src: "img/conjunto4.png", legenda: "Compressores" },
   { src: "img/conjunto5.png", legenda: "Hidráulicos para elevação" },
   { src: "img/conjunto6.png", legenda: "Macacos hidráulicos" }
 ];
@@ -23,8 +23,8 @@ const legenda  = document.getElementById("legenda");
 const contador = document.getElementById("contador");
 
 function atualizarSlide() {
-  slide.src         = imagens[index].src;
-  slide.alt         = imagens[index].legenda;
+  slide.src = imagens[index].src;
+  slide.alt = imagens[index].legenda;
   legenda.innerText = imagens[index].legenda;
   contador.innerText = (index + 1) + " / " + imagens.length;
 }
@@ -60,7 +60,7 @@ window.addEventListener("scroll", () => {
 
 /* ---- MENU MOBILE ---- */
 const menuToggle = document.getElementById("menuToggle");
-const navMenu    = document.getElementById("navMenu");
+const navMenu = document.getElementById("navMenu");
 
 menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("ativo");
