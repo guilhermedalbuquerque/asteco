@@ -143,9 +143,17 @@ nav ul li a:hover {
   transition: 0.3s;
 }
 
-.menu-toggle.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.menu-toggle.ativo span:nth-child(2) { opacity: 0; }
-.menu-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-toggle.ativo span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.ativo span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* =====================
    SCROLL ANIMATION
@@ -186,7 +194,11 @@ section {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(14,60,44,0.35) 0%, transparent 70%),
+    radial-gradient(
+      ellipse 60% 50% at 50% 60%,
+      rgba(14,60,44,0.35) 0%,
+      transparent 70%
+    ),
     repeating-linear-gradient(
       90deg,
       transparent,
@@ -394,6 +406,16 @@ section {
   transform: translateY(0);
 }
 
+/* MOBILE TOUCH */
+.slide-container.ativo-mobile .overlay {
+  background: rgba(0,0,0,0.45);
+}
+
+.slide-container.ativo-mobile .overlay span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .slider button {
   background: var(--verde-escuro);
   color: white;
@@ -477,7 +499,12 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 50% 70% at 50% 100%, rgba(14,60,44,0.4) 0%, transparent 65%);
+  background:
+    radial-gradient(
+      ellipse 50% 70% at 50% 100%,
+      rgba(14,60,44,0.4) 0%,
+      transparent 65%
+    );
   pointer-events: none;
 }
 
@@ -564,10 +591,14 @@ footer span {
    MOBILE
 ===================== */
 @media (max-width: 768px) {
+
   header { padding: 13px 20px; }
+
   header.scroll { padding: 9px 20px; }
 
-  .menu-toggle { display: flex; }
+  .menu-toggle {
+    display: flex;
+  }
 
   nav ul {
     display: none;
@@ -583,7 +614,9 @@ footer span {
     border-top: 1px solid var(--verde-escuro);
   }
 
-  nav ul.aberto { display: flex; }
+  nav ul.aberto {
+    display: flex;
+  }
 
   nav ul li a {
     display: block;
@@ -592,27 +625,38 @@ footer span {
     font-size: 1rem;
   }
 
-  section { padding: 90px 20px; }
+  section {
+    padding: 90px 20px;
+  }
 
-  #home img { border-radius: 10px; }
+  #home img {
+    border-radius: 10px;
+  }
 
   #background-destaque {
     background-attachment: scroll;
     height: 240px;
   }
 
-  .conteudo-bg h2 { font-size: 1.4rem; }
+  .conteudo-bg h2 {
+    font-size: 1.4rem;
+  }
 
-  .slide-container img { height: 220px; }
+  .slide-container img {
+    height: 220px;
+  }
 
+  /* overlay escondido inicialmente no mobile */
   .overlay {
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0);
   }
 
   .overlay span {
-    opacity: 0.9;
-    transform: none;
+    opacity: 0;
+    transform: translateY(10px);
   }
 
-  #localizacao { padding: 60px 20px; }
-}teste
+  #localizacao {
+    padding: 60px 20px;
+  }
+}

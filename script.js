@@ -18,15 +18,19 @@ const imagens = [
 
 let index = 0;
 
-const slide    = document.getElementById("slideImagem");
-const legenda  = document.getElementById("legenda");
+const slide = document.getElementById("slideImagem");
+const legenda = document.getElementById("legenda");
 const contador = document.getElementById("contador");
+const slideContainer = document.querySelector(".slide-container");
 
 function atualizarSlide() {
   slide.src = imagens[index].src;
   slide.alt = imagens[index].legenda;
   legenda.innerText = imagens[index].legenda;
   contador.innerText = (index + 1) + " / " + imagens.length;
+
+  /* remove overlay ao trocar slide no mobile */
+  slideContainer.classList.remove("ativo-mobile");
 }
 
 atualizarSlide();
@@ -41,12 +45,20 @@ document.querySelector(".prev").onclick = () => {
   atualizarSlide();
 };
 
+/* ---- OVERLAY MOBILE ---- */
+slideContainer.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    slideContainer.classList.toggle("ativo-mobile");
+  }
+});
+
 /* ---- SCROLL ANIMATION ---- */
 const elementos = document.querySelectorAll('.animar');
 
 window.addEventListener('scroll', () => {
   elementos.forEach(el => {
     const top = el.getBoundingClientRect().top;
+
     if (top < window.innerHeight - 100) {
       el.classList.add('ativo');
     }
@@ -55,7 +67,9 @@ window.addEventListener('scroll', () => {
 
 /* ---- NAVBAR SCROLL ---- */
 window.addEventListener("scroll", () => {
-  document.querySelector("header").classList.toggle("scroll", window.scrollY > 50);
+  document
+    .querySelector("header")
+    .classList.toggle("scroll", window.scrollY > 50);
 });
 
 /* ---- MENU MOBILE ---- */
