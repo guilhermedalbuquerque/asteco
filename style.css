@@ -592,9 +592,13 @@ footer span {
 ===================== */
 @media (max-width: 768px) {
 
-  header { padding: 13px 20px; }
+  header {
+    padding: 13px 20px;
+  }
 
-  header.scroll { padding: 9px 20px; }
+  header.scroll {
+    padding: 9px 20px;
+  }
 
   .menu-toggle {
     display: flex;
@@ -642,8 +646,35 @@ footer span {
     font-size: 1.4rem;
   }
 
+  /* =====================
+     SLIDER MOBILE
+  ===================== */
+
+  .slider {
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .slide-container {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 14px;
+  }
+
   .slide-container img {
-    height: 220px;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #dcdcdc;
+    padding: 10px;
+  }
+
+  .slider button {
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+    flex-shrink: 0;
   }
 
   /* overlay escondido inicialmente no mobile */
