@@ -656,15 +656,16 @@ footer span {
     max-width: 100%;
   }
 
-  .slide-container {
+ .slide-container {
   width: 86vw;
   max-width: 86vw;
   border-radius: 14px;
-  aspect-ratio: 4 / 3;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  height: 260px;        /* altura fixa e menor */
 }
 
   .slide-container img {
@@ -672,8 +673,9 @@ footer span {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 16px;
+  padding: 12px;
 }
+
 
   .slider button {
   width: 42px;
