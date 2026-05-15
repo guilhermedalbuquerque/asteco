@@ -12,7 +12,7 @@ const imagens = [
   { src: "img/conjunto7.png", legenda: "Válvulas protetoras de 4 circuitos e de 6 vias" },
   { src: "img/conjunto8.png", legenda: "Válvula do freio de serviço, manete e moduladora do ABS" },
   { src: "img/conjunto4.png", legenda: "Compressores" },
-  { src: "img/conjunto5.png", legenda: "Hidráulicos para elevação" },
+  { src: "img/conjunto5.png", legenda: "Hidráulicos para elevação de cabine" },
   { src: "img/conjunto6.png", legenda: "Macacos hidráulicos" }
 ];
 
