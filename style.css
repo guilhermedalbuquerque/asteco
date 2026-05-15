@@ -657,25 +657,30 @@ footer span {
   }
 
   .slide-container {
-  width: 82vw;
-  max-width: 82vw;
+  width: 86vw;
+  max-width: 86vw;
   border-radius: 14px;
+  aspect-ratio: 4 / 3;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
   .slide-container img {
   width: 100%;
-  height: 340px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
-  background: #dcdcdc;
+  padding: 16px;
 }
 
   .slider button {
-    width: 42px;
-    height: 42px;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-  }
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
 
   /* overlay escondido inicialmente no mobile */
   .overlay {
