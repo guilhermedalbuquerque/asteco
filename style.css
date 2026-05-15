@@ -677,19 +677,34 @@ footer span {
 
   /* legenda visível abaixo do card no mobile */
   .slide-legenda-mobile {
-    display: block;
-    color: var(--cinza-claro);
-    font-size: 0.88rem;
-    text-align: center;
-    margin-top: 14px;
-    padding: 0 10px;
-    max-width: 82vw;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 2.8em;
-    line-height: 1.45;
-  }
+  display: block;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 18px;
+  padding: 14px 18px;
+  max-width: 84vw;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 3.2em;
+  line-height: 1.5;
 
+  background: linear-gradient(
+    135deg,
+    var(--verde-escuro),
+    var(--verde-acento)
+  );
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    0 0 18px rgba(30,140,96,0.25);
+
+  letter-spacing: 0.3px;
+}
   .slider button {
     width: 42px;
     height: 42px;
