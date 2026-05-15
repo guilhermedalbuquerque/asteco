@@ -406,16 +406,6 @@ section {
   transform: translateY(0);
 }
 
-/* MOBILE TOUCH */
-.slide-container.ativo-mobile .overlay {
-  background: rgba(0,0,0,0.45);
-}
-
-.slide-container.ativo-mobile .overlay span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .slider button {
   background: var(--verde-escuro);
   color: white;
@@ -446,6 +436,11 @@ section {
   color: var(--cinza-claro);
   font-size: 0.85rem;
   letter-spacing: 1px;
+}
+
+/* Legenda mobile — oculta no desktop */
+.slide-legenda-mobile {
+  display: none;
 }
 
 /* =====================
@@ -656,40 +651,51 @@ footer span {
     max-width: 100%;
   }
 
-.slide-container {
-  width: 82vw;
-  max-width: 82vw;
-  border-radius: 14px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  height: 220px;
-}
+  .slide-container {
+    width: 82vw;
+    max-width: 82vw;
+    border-radius: 14px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 240px;
+  }
 
-.slide-container img {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
-  object-position: center;
-}
+  .slide-container img {
+    width: 92%;
+    height: 92%;
+    object-fit: contain;
+    object-position: center;
+  }
 
-.slider button {
-  width: 42px;
-  height: 42px;
-  font-size: 1.3rem;
-  flex-shrink: 0;
-}
+  /* overlay completamente desativado no mobile */
+  .overlay {
+    display: none;
+  }
 
-.overlay {
-  background: rgba(0,0,0,0);
-}
+  /* legenda visível abaixo do card no mobile */
+  .slide-legenda-mobile {
+    display: block;
+    color: var(--cinza-claro);
+    font-size: 0.88rem;
+    text-align: center;
+    margin-top: 14px;
+    padding: 0 10px;
+    max-width: 82vw;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 2.8em;
+    line-height: 1.45;
+  }
 
-.overlay span {
-  opacity: 0;
-  transform: translateY(10px);
-}
+  .slider button {
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
 
   #localizacao {
     padding: 60px 20px;

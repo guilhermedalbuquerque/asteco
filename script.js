@@ -20,17 +20,21 @@ let index = 0;
 
 const slide = document.getElementById("slideImagem");
 const legenda = document.getElementById("legenda");
+const legendaMobile = document.getElementById("legendaMobile");
 const contador = document.getElementById("contador");
 const slideContainer = document.querySelector(".slide-container");
 
 function atualizarSlide() {
   slide.src = imagens[index].src;
   slide.alt = imagens[index].legenda;
-  legenda.innerText = imagens[index].legenda;
-  contador.innerText = (index + 1) + " / " + imagens.length;
 
-  /* remove overlay ao trocar slide no mobile */
-  slideContainer.classList.remove("ativo-mobile");
+  /* legenda desktop (overlay ao hover) */
+  legenda.innerText = imagens[index].legenda;
+
+  /* legenda mobile (sempre visível abaixo do card) */
+  legendaMobile.innerText = imagens[index].legenda;
+
+  contador.innerText = (index + 1) + " / " + imagens.length;
 }
 
 atualizarSlide();
@@ -45,20 +49,12 @@ document.querySelector(".prev").onclick = () => {
   atualizarSlide();
 };
 
-/* ---- OVERLAY MOBILE ---- */
-slideContainer.addEventListener("click", () => {
-  if (window.innerWidth <= 768) {
-    slideContainer.classList.toggle("ativo-mobile");
-  }
-});
-
 /* ---- SCROLL ANIMATION ---- */
 const elementos = document.querySelectorAll('.animar');
 
 window.addEventListener('scroll', () => {
   elementos.forEach(el => {
     const top = el.getBoundingClientRect().top;
-
     if (top < window.innerHeight - 100) {
       el.classList.add('ativo');
     }
